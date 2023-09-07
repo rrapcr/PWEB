@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 0;
+    overflow: hidden; /* Evita que o rodapé seja empurrado para fora da tela */
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-right: 20px;
+}
+
+
+.item {
+    min-height: 150px;
+    display: block;
+    align-items: center;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    text-align: justify;
+    clear: both; /* Evita que o texto se sobreponha às imagens */
+    margin-left: 100px;
+}
+
+ 
+
+article img {
+    float: left;
+}
+
+ 
+.menu {
+    float: right;
+    margin-top: 30px;
+    margin-right: 500px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-family: "courier";
+}
+
+
+.menu h2 {
+    font-size: 15px;
+}
+
+ 
+.itens {
+    margin: 10px 10px 0 0;
+    width: 750px;
+    float: left;
+    display: block;
+    min-height: 400px;
+    font-family: "courier";
+    font-size:15px;
+    overflow: inherit;
+}
+
+
+.rodape {
+  clear: both; /* Coloca o rodapé abaixo dos itens */
+    margin-top: 20px; /* Adiciona margem superior ao rodapé */
+
+}
