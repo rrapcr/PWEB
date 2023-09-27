@@ -1,0 +1,33 @@
+/* styles.css */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .button-container button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    /* Adiciona um espaço abaixo do botão para a imagem */
+    margin-bottom: 10px;
+  }
+  
+  /* Estiliza as imagens dentro dos botões */
+  .button-container button img {
+    /* Define uma largura máxima para a imagem igual à largura do botão */
+    max-width: 100%;
+    /* Remove a altura fixa da imagem */
+    height: auto;
+  }
+  
+  /* Estiliza o parágrafo que exibe o resultado do jogo */
+  #resultado {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }

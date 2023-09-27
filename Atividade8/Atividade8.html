@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Título da página -->
+  <title>Jogo Pedra, Papel ou Tesoura</title>
+  <!-- Inclui o arquivo CSS externo para estilizar a página -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <!-- Título principal -->
+  <h1>Escolha: Pedra, Papel ou Tesoura</h1>
+  <!-- Container dos botões -->
+  <div class="button-container">
+    <!-- Botão para escolher Pedra -->
+    <button onclick="fazerJogada('pedra')">
+      <!-- Imagem associada à opção Pedra -->
+      <img src="pedra.jpg" alt="Pedra">
+      Pedra
+    </button>
+    <!-- Botão para escolher Papel -->
+    <button onclick="fazerJogada('papel')">
+      <!-- Imagem associada à opção Papel -->
+      <img src="papel.jpg" alt="Papel">
+      Papel
+    </button>
+    <!-- Botão para escolher Tesoura -->
+    <button onclick="fazerJogada('tesoura')">
+      <!-- Imagem associada à opção Tesoura -->
+      <img src="tesoura.jpg" alt="Tesoura">
+      Tesoura
+    </button>
+  </div>
+  <!-- Parágrafo para exibir o resultado do jogo -->
+  <p id="resultado"></p>
+
+  <!-- Script JavaScript -->
+  <script>
+    // Função para escolher aleatoriamente a opção do computador
+    function escolhaAleatoriaComputador() {
+      const opcoesPossiveis = ['pedra', 'papel', 'tesoura'];
+      const indiceAleatorio = Math.floor(Math.random() * opcoesPossiveis.length);
+      return opcoesPossiveis[indiceAleatorio];
+    }
+
+    // Função para realizar uma jogada quando um botão é clicado
+    function fazerJogada(escolhaJogador) {
+      // Chama a função para escolher a opção do computador
+      const escolhaComputador = escolhaAleatoriaComputador();
+
+      let resultado;
+
+      // Verifica o resultado do jogo com base nas escolhas do jogador e do computador
+      if (escolhaJogador === escolhaComputador) {
+        resultado = 'Empate!';
+      } else if (
+        (escolhaJogador === 'pedra' && escolhaComputador === 'tesoura') ||
+        (escolhaJogador === 'tesoura' && escolhaComputador === 'papel') ||
+        (escolhaJogador === 'papel' && escolhaComputador === 'pedra')
+      ) {
+        resultado = 'Você ganhou!';
+      } else {
+        resultado = 'Computador ganhou!';
+      }
+
+      // Exibe o resultado na página
+      const resultadoElement = document.getElementById('resultado');
+      resultadoElement.textContent = `Você escolheu ${escolhaJogador}, o computador escolheu ${escolhaComputador}. ${resultado}`;
+    }
+  </script>
+</body>
+</html>
