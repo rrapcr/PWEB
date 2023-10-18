@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Objetos</title>
+</head>
+<body>
+    <script>
+        //Primeira maneira criando objeto com ()
+        var aluno1 = new Object();
+        aluno1.ra = "000498848";
+        aluno1.nome = "Ken";
+        alert("ra= " + aluno1.ra + " nome= " + aluno1.nome); // Monstrando na tela FUNCAO ALERT
+
+         //Usando {}
+        var aluno2 = {};
+        aluno2.ra = "0004988";
+        aluno2["nome"] = "beteny";
+        alert("ra= " + aluno2.ra + " nome= " + aluno2.nome); // Monstrando na tela FUNCAO ALERT
+
+
+        //Literal
+        var aluno3 = {
+            ra: "228374",
+            nome: "Raphael"
+        };
+        alert("ra= "+ aluno3.ra + " nome= " + aluno3.nome); // Monstrando na tela FUNCAO ALERT
+
+        //Usando função construtora
+        function Aluno(ra,nome){
+            this.ra = ra;
+            this.nome = nome;
+
+            this.MostrarDados = function () {
+                return "ra=" + this.ra + " nome=" + this.nome;
+            }
+        }
+
+        var aluno4 = new Aluno("1232323", "David");
+        alert(aluno4.MostrarDados());
+        //alert(aluno4.nome);
+
+
+        /*var aluno5 = {};
+        var nome_propriedade = "ra";
+        aluno5[nome_propriedade] = "237463";
+        aluno5["nome"] = "Dayane";*/
+
+
+
+        function Aluno2() {
+            var ra;
+            var nome;
+            this.setRa = function(value) {
+                this.ra = value;
+            }
+            this.getRa = function () {
+                return this.ra;
+            }
+            this.setNome = function (value) {
+                this.nome = value;
+            }
+            this.getNome = function () {
+                return this.nome;
+            }
+
+        }
+
+        var aluno6 = new Aluno2();
+            aluno6.setNome("Pedro");
+            aluno6.setRa("36364553");
+            alert("ra=" + aluno6.getRa() + " nome=" + aluno6.getNome());
+   
+   
+    </script>
+</body>
+</html>
