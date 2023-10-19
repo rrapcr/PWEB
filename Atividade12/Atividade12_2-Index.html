@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes da Conta Bancária</title>
+</head>
+<body>
+    <h1>Detalhes da Conta Bancária</h1>
+
+    <script>
+        // Classe base para Conta Bancária
+        function ContaBancaria(titular, nomeBanco, numeroConta, saldo) {
+            this.titular = titular;
+            this.nomeBanco = nomeBanco;
+            this.numeroConta = numeroConta;
+            this.saldo = saldo;
+        }
+
+        // Método para adicionar dinheiro à conta
+        ContaBancaria.prototype.adicionarDinheiro = function (quantia) {
+            if (quantia > 0) {
+                this.saldo += quantia;
+            }
+        };
+
+        // Método para retirar dinheiro da conta
+        ContaBancaria.prototype.retirarDinheiro = function (quantia) {
+            if (quantia > 0 && quantia <= this.saldo) {
+                this.saldo -= quantia;
+            }
+        };
+
+        // Classe Conta de Cheque Especial (herda de ContaBancaria)
+        function ContaChequeEspecial(titular, nomeBanco, numeroConta, saldo, limite) {
+            ContaBancaria.call(this, titular, nomeBanco, numeroConta, saldo);
+            this.limite = limite;
+        }
+
+        // Herança de ContaBancaria
+        ContaChequeEspecial.prototype = Object.create(ContaBancaria.prototype);
+        ContaChequeEspecial.prototype.constructor = ContaChequeEspecial;
+
+        // Classe Conta Poupança com Rendimento e Data de Vencimento (herda de ContaBancaria)
+        function ContaPoupancaRendimentoDataVencimento(titular, nomeBanco, numeroConta, saldo, taxaRendimento, dataVencimento) {
+            ContaBancaria.call(this, titular, nomeBanco, numeroConta, saldo);
+            this.taxaRendimento = taxaRendimento;
+            this.dataVencimento = dataVencimento;
+        }
+
+        // Herança de ContaBancaria
+        ContaPoupancaRendimentoDataVencimento.prototype = Object.create(ContaBancaria.prototype);
+        ContaPoupancaRendimentoDataVencimento.prototype.constructor = ContaPoupancaRendimentoDataVencimento;
+
+        // Criar uma Conta de Cheque Especial
+        var contaChequeEspecial = new ContaChequeEspecial("Alice", "Banco X", "98765", 3000, 1000);
+
+        // Criar uma Conta Poupança com Rendimento e Data de Vencimento
+        var contaPoupanca = new ContaPoupancaRendimentoDataVencimento("Bob", "Banco Y", "54321", 5000, 0.03, "2023-12-31");
+
+        // Exibir os detalhes das contas
+        console.log("Detalhes da Conta de Cheque Especial:");
+        console.log("Titular: " + contaChequeEspecial.titular);
+        console.log("Banco: " + contaChequeEspecial.nomeBanco);
+        console.log("Número da Conta: " + contaChequeEspecial.numeroConta);
+        console.log("Saldo: " + contaChequeEspecial.saldo);
+        console.log("Limite do Cheque Especial: " + contaChequeEspecial.limite);
+
+        console.log("\nDetalhes da Conta Poupança:");
+        console.log("Titular: " + contaPoupanca.titular);
+        console.log("Banco: " + contaPoupanca.nomeBanco);
+        console.log("Número da Conta: " + contaPoupanca.numeroConta);
+        console.log("Saldo: " + contaPoupanca.saldo);
+        console.log("Taxa de Rendimento: " + contaPoupanca.taxaRendimento);
+        console.log("Data de Vencimento: " + contaPoupanca.dataVencimento);
+    </script>
+</body>
+</html>
