@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abra a Janela</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif; /* Alterei a fonte para Verdana */
+            text-align: center;
+            background-color: #d3e0ea; /* Alterei a cor de fundo */
+            padding: 30px;
+        }
+
+        #titulo {
+            margin-bottom: 20px;
+            color: #333; /* Alterei a cor do texto do título */
+        }
+
+        #janela {
+            max-width: 400px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">Clique para Abrir a Janela</h1>
+    <img id="janela" src="janelafechada.jpg" alt="Janela Fechada">
+
+    <script>
+        let janela = document.getElementById('janela');
+
+        janela.addEventListener('mouseover', function() {
+            janela.src = 'janelaberta.jpg';
+        });
+
+        janela.addEventListener('mouseout', function() {
+            if (janela.src.includes("janelaquebrada")) {
+                return;
+            }
+            janela.src = 'janelafechada.jpg';
+        });
+
+        janela.addEventListener('click', function() {
+            janela.src = 'janelaquebrada.jpg';
+        
+            janela.removeEventListener('mouseover', arguments.callee);
+            janela.removeEventListener('mouseout', arguments.callee);
+        });
+    </script>
+</body>
+
+</html>
