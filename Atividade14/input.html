@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Transformado</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif; /* Alterei a fonte para Times New Roman */
+            background-color: #e6e6e6; /* Alterei a cor de fundo */
+            padding: 40px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px; /* Aumentei o tamanho da fonte */
+            width: 300px;
+            border: 2px solid #333; /* Alterei a cor da borda */
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007BFF;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0;
+            font-size: 18px; /* Aumentei o tamanho da fonte */
+            color: #333; /* Alterei a cor do texto do label */
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px; /* Aumentei o espaço entre checkbox e texto */
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="texto" oninput="transformarTexto()">
+    <label>
+        <input type="checkbox" id="maiusculas" onclick="transformarTexto()"> Transformar em Maiúsculas
+    </label>
+    <label>
+        <input type="checkbox" id="minusculas" onclick="transformarTexto()"> Transformar em Minúsculas
+    </label>
+
+    <script>
+        function transformarTexto() {
+            let textoInput = document.getElementById('texto');
+            let checkboxMaiusculas = document.getElementById('maiusculas');
+            let checkboxMinusculas = document.getElementById('minusculas');
+
+            if (checkboxMaiusculas.checked && checkboxMinusculas.checked) {
+                return;
+            }
+
+            if (checkboxMaiusculas.checked) {
+                textoInput.value = textoInput.value.toUpperCase();
+            } else if (checkboxMinusculas.checked) {
+                textoInput.value = textoInput.value.toLowerCase();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
