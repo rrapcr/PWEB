@@ -1,0 +1,404 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    height: 100vh;
+}
+
+h2.title {
+    color: white;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.title span {
+    font-size: 38px;
+    text-align: center;
+    color: white;
+}
+
+button:hover,
+.btn-enviar input[type=submit]:hover {
+    box-shadow: 0px 0px 8px white;
+    transform: scale(1.05);
+    transition: .2s;
+    border-radius: 20px
+}
+
+.flex {
+    display: flex;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+    color: #f8f8f8;
+}
+
+header {
+    padding: 40px 4%;
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #f8f8f8;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 40px;
+}
+
+header nav ul li a {
+    color: #050505;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+header nav ul li a:hover {
+    color: #000;
+    background-color: #f8f8f8;
+}
+
+header .menu-icon {
+    display: block;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+header nav ul {
+    display: none;
+}
+
+header nav.open ul {
+    display: block;
+}
+
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section .topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1 {
+    color: white;
+    font-size: 38px;
+    line-height: 40px;
+}
+
+.topo-do-site h1 span {
+    color: white;
+    font-size: 84px;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: white;
+    margin: 40px 0px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.8);
+    }
+    20% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(0.8);
+    }
+    60% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulsating-heart img {
+    animation: heartbeat 4s infinite;
+}
+
+.img-topo-site img {
+    max-width: 1000px;
+    height: auto;
+}
+
+.txt-topo-site h1 {
+    margin-left: 20px;
+}
+
+section.habilidades {
+    padding: 40px 4%;
+}
+
+section.habilidades .flex {
+    gap: 80px;
+}
+
+.habilidades .habilidades-box {
+    flex: 1;
+    color: white;
+    padding: 40px;
+    border: 2px solid white;
+    margin-top: 45px;
+    transition: .2s;
+    border-radius: 20px;
+}
+
+.habilidades .habilidades-box:hover {
+   box-shadow: 0 0 35px rgba(0, 0, 0, 0.396);
+}
+
+.habilidades .habilidades-box i {
+    font-size: 70px;
+    color: white;
+    
+}
+
+.habilidades .habilidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+    
+}
+
+@media (max-width: 768px) {
+    h2.title {
+        font-size: 28px;
+    }
+
+    .habilidades .habilidades-box h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topo-do-site .flex {
+        flex-direction: column;
+    }
+
+    .txt-topo-site {
+        text-align: center;
+    }
+}
+
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    font-size: 40px;
+    color: white;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    color: white;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: white;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 20px
+}
+
+section.experiencia {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.299);
+}
+
+section.experiencia .flex {
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-color: white;
+    background-size: cover;
+    background-position: 100%;
+}
+
+.experiencia {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.299);
+}
+
+.experiencia .interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.experiencia .flex {
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.experiencia-box {
+    color: white;
+    padding: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: .2s;
+    margin-bottom: 20px;
+}
+
+.experiencia-box h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.experiencia-box p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.comentario textarea {
+    margin-bottom: -26px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; 
+    }
+}
+
+@media (min-width: 769px) {
+    header nav ul {
+        display: block; 
+    }
+}
+
+@media (max-width: 768px) {
+    section.habilidades .flex {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .habilidades .habilidades-box {
+        margin-top: 20px; 
+    }
+}
+
+@media (max-width: 768px) {
+    section.sobre .flex {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .img-sobre {
+        order: 1; 
+        margin-bottom: 20px; 
+    }
+
+    .txt-sobre {
+        order: 2; 
+    }
+}
+
+@media (max-width: 339px) {
+    body {
+        overflow-x: hidden; 
+    }
+
+    .interface {
+        padding: 10px; 
+        box-sizing: border-box; 
+    }
+}
+
+@media (max-width: 768px) {
+    .img-topo-site {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-topo-site img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .txt-topo-site h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre .img-sobre img {
+        max-width: 100%; 
+        height: auto;
+        margin-top: 10px; 
+    }
+}
+
